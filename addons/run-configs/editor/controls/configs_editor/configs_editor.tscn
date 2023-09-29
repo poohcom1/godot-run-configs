@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=3 uid="uid://dso1w1uqfsxmi"]
+
+[ext_resource type="Script" path="res://addons/run-configs/editor/controls/configs_editor/play_mode_dropdown.gd" id="1_bhvuh"]
+[ext_resource type="Script" path="res://addons/run-configs/editor/controls/configs_editor/configs_editor.gd" id="1_ldnip"]
+[ext_resource type="Script" path="res://addons/run-configs/editor/controls/configs_editor/env_editor.gd" id="3_2bcxm"]
+
+[sub_resource type="Image" id="Image_qmwhv"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_ody55"]
+image = SubResource("Image_qmwhv")
+
+[sub_resource type="GDScript" id="GDScript_knwq4"]
+script/source = "@tool
+extends Button
+
+func _ready() -> void:
+	icon = get_theme_icon(&\"Add\", &\"EditorIcons\")
+"
+
+[sub_resource type="GDScript" id="GDScript_b2o0p"]
+script/source = "@tool
+extends Button
+
+func _ready() -> void:
+	icon = get_theme_icon(&\"Close\", &\"EditorIcons\")
+"
+
+[sub_resource type="GDScript" id="GDScript_fhb5p"]
+script/source = "@tool
+extends Button
+
+func _ready() -> void:
+	icon = get_theme_icon(&\"Folder\", &\"EditorIcons\")
+"
+
+[sub_resource type="GDScript" id="GDScript_ggysl"]
+script/source = "@tool
+extends Button
+
+func _ready() -> void:
+	icon = get_theme_icon(&\"Add\", &\"EditorIcons\")
+"
+
+[node name="ConfigsEditor" type="ConfirmationDialog"]
+title = "Edit Run Configurations"
+initial_position = 2
+size = Vector2i(698, 400)
+visible = true
+ok_button_text = "Apply"
+script = ExtResource("1_ldnip")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 690.0
+offset_bottom = 351.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ConfigsEditor" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ConfigsEditor"]
+layout_mode = 2
+
+[node name="AddConfig" type="Button" parent="MarginContainer/ConfigsEditor/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+icon = SubResource("ImageTexture_ody55")
+script = SubResource("GDScript_knwq4")
+
+[node name="RemoveConfig" type="Button" parent="MarginContainer/ConfigsEditor/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+icon = SubResource("ImageTexture_ody55")
+script = SubResource("GDScript_b2o0p")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/ConfigsEditor"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+
+[node name="ConfigsList" type="ItemList" parent="MarginContainer/ConfigsEditor/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+auto_height = true
+
+[node name="Editor" type="VBoxContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Name" type="Label" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+layout_mode = 2
+text = "Name                          "
+
+[node name="NameEdit" type="LineEdit" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayMode" type="Label" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+layout_mode = 2
+text = "Run Mode"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayModeEdit" type="OptionButton" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+popup/item_0/text = "Main Scene"
+popup/item_0/icon = SubResource("ImageTexture_ody55")
+popup/item_0/id = 0
+popup/item_1/text = "Current Scene"
+popup/item_1/icon = SubResource("ImageTexture_ody55")
+popup/item_1/id = 1
+popup/item_2/text = "Custom Scene"
+popup/item_2/icon = SubResource("ImageTexture_ody55")
+popup/item_2/id = 2
+script = ExtResource("1_bhvuh")
+
+[node name="CustomSceneEdit" type="Button" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose a scene..."
+icon = SubResource("ImageTexture_ody55")
+script = SubResource("GDScript_fhb5p")
+
+[node name="Env" type="Label" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Environment Variables"
+
+[node name="EnvEdit" type="VBoxContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_2bcxm")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer/EnvEdit"]
+layout_mode = 2
+columns = 3
+
+[node name="AddEnv" type="Button" parent="MarginContainer/ConfigsEditor/HSplitContainer/Editor/GridContainer/EnvEdit"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "New Variable"
+icon = SubResource("ImageTexture_ody55")
+script = SubResource("GDScript_ggysl")
