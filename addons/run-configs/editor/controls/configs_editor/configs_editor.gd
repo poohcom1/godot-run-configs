@@ -45,7 +45,7 @@ func _ready():
 	env_edit.changed.connect(func(envs): _update_value(&"environment_variables", envs))
 
 	confirmed.connect(func(): ConfigsManager.set_configs(configs))
-	
+
 
 # General
 func _on_popup():
@@ -55,8 +55,23 @@ func _on_popup():
 
 
 func _on_add_config():
-	ConfigsManager.add_config()
-	configs = ConfigsManager.load_configs()
+	var new_config := RunConfig.new()
+	
+	# Check for duplicate names
+	var base_name := new_config.name
+	var name := new_config.name
+	var count := 2
+	
+	while true:
+		for config in configs:
+			if name == config.name:
+				name = "%s (%d)" % [base_name, count]
+				count += 1
+			
+		break
+	new_config.name = name
+	
+	configs.append(new_config)
 	selected = configs.size() - 1
 	_render()
 	name_edit.grab_focus()
@@ -64,8 +79,8 @@ func _on_add_config():
 
 
 func _on_remove_config():
-	ConfigsManager.remove_config_index(selected)
-	configs = ConfigsManager.load_configs()
+	if configs.size() <= 0: return
+	configs.remove_at(selected)
 	selected = clamp(selected, 0, configs.size() - 1)
 	_render()
 	
@@ -77,8 +92,11 @@ func _render():
 	for config in configs:
 		configs_list.add_item(config.name)
 	
-	configs_list.select(selected if selected >= 0 else 0)
-		
+	if configs.size() > 0:
+		configs_list.select(selected if selected >= 0 else 0)
+	
+	remove_config.disabled = configs.size() <= 0
+	 
 	# Form
 	_render_form(selected)
 
@@ -86,6 +104,13 @@ func _render():
 # Form
 func _render_form(ind: int):
 	selected = ind
+	
+	if selected < 0 or selected >= configs.size():
+		%Editor.hide()
+		%Hint.show()
+		return
+	%Hint.hide()
+	%Editor.show()
 	
 	var config := configs[selected]
 	# Name

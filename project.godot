@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ConfigManager="*res://addons/run-configs/run-config-manager.gd"
+RunConfigManager="*res://addons/run-configs/run-config-manager.gd"
 
 [dotnet]
 
@@ -25,3 +25,8 @@ project/assembly_name="Run Configs Plugin"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/run-configs/plugin.cfg")
+
+[run_configs]
+
+data/configs=["{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Default\",\"play_mode\":0}", "{\"custom_scene\":\"\",\"environment_variables\":{\"HEALTH\":\"999\",\"SPAWN_RATE\":\"15\",\"SPEED\":\"2\"},\"name\":\"Debug\",\"play_mode\":2}", "{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Test\",\"play_mode\":0}"]
+data/current=0

@@ -19,10 +19,6 @@ func _ready():
 	print_rich("[color=yellow][Run Config][/color] Current config: [b]%s[/b]." % config.name)
 
 
-func _process(delta):
-	pass
-
-
 ## API
 static func get_current_config() -> RunConfig:
 	var ind := get_current_config_index()
@@ -70,24 +66,6 @@ static func add_config(new_config := RunConfig.new()) -> void:
 
 	if not configs:
 		configs = []
-	
-	# Check for duplicate names
-	var base_name := new_config.name
-	var name := new_config.name
-	var count := 2
-	
-	while true:
-		for json in configs:
-			var config: RunConfig = RunConfig.new().deserialize(json)
-			if name == config.name:
-				name = "%s (%d)" % [base_name, count]
-				count += 1
-				continue
-			
-		break
-		
-	new_config.name = name
-	
 
 	configs.append(new_config.serialize())
 
@@ -118,7 +96,7 @@ static func set_current_config_index(id: int) -> void:
 static func get_current_config_index() -> int:
 	var ind = ProjectSettings.get_setting(_CURRENT_CONFIG_PATH)
 
-	if ind:
+	if ind != null:
 		return ind
 
-	return 0
+	return -1
