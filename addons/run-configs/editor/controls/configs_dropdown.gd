@@ -12,20 +12,24 @@ var _no_config_index := 0
 
 const DEFAULT_CONFIGS_TEXT = "..."
 
-func _init():
+
+func _ready():
 	icon = EditorInterface.get_base_control().get_theme_icon(&"GuiTreeArrowDown", &"EditorIcons")
 	icon_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	text = DEFAULT_CONFIGS_TEXT
 	configs_editor = ConfigsEditorScene.instantiate()
 	configs_editor.hide()
 
-func _ready():
-	add_child(configs_editor)
+	EditorInterface.get_base_control().add_child(configs_editor)
 	configs_editor.confirmed.connect(_update, CONNECT_DEFERRED)
 	
 	pressed.connect(_update)
 	get_popup().id_pressed.connect(_on_id_pressed)
 	_update() # Make sure size is properly set to fit in screen
+
+
+func _exit_tree() -> void:
+	configs_editor.queue_free()
 
 
 func _update():

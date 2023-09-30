@@ -2,8 +2,11 @@ extends Node
 
 const RunConfig := preload("res://addons/run-configs/models/run_config.gd")
 
-func _ready():
+func _init():
 	if not OS.has_feature(&"editor"):
+		return
+	
+	if Engine.is_editor_hint():
 		return
 
 	var config := get_current_config()

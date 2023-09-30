@@ -32,19 +32,15 @@ func _enter_tree():
 	# Inspector plugin
 	add_inspector_plugin(inspector_plugin)
 
-	# Autoload
+func _enable_plugin() -> void:
 	add_autoload_singleton(AUTOLOAD_PATH, "res://addons/run-configs/run-config-manager.gd")
 
 
-func _exit_tree():
-	# Clean-up of the plugin goes here.
+func _disable_plugin() -> void:
 	UIExtension.remove_control_from_editor_run_bar(play_button)
 	UIExtension.remove_control_from_editor_run_bar(configs_button)
-
 	remove_inspector_plugin(inspector_plugin)
-
-
-func _disable_plugin() -> void:
+	
 	remove_autoload_singleton(AUTOLOAD_PATH)
 
 
