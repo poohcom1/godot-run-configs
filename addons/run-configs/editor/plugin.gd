@@ -23,7 +23,7 @@ func _enter_tree():
 	# Play Button
 	play_button.icon = preload("res://addons/run-configs/editor/assets/PlayConfig.svg")
 	play_button.pressed.connect(_play_scene)
-	play_button.tooltip_text = "Play config"
+	play_button.tooltip_text = "Run Config"
 	UIExtension.add_control_to_editor_run_bar(play_button)
 
 	# Configs button

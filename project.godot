@@ -28,5 +28,5 @@ enabled=PackedStringArray("res://addons/run-configs/plugin.cfg")
 
 [run_configs]
 
-data/configs=["{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Default\",\"play_mode\":0}", "{\"custom_scene\":\"\",\"environment_variables\":{\"HEALTH\":\"999\",\"SPAWN_RATE\":\"15\",\"SPEED\":\"2\"},\"name\":\"Debug\",\"play_mode\":2}", "{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Test\",\"play_mode\":0}"]
+data/configs=["{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Default\",\"play_mode\":0}", "{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Debug\",\"play_mode\":0}", "{\"custom_scene\":\"\",\"environment_variables\":{},\"name\":\"Config (3)\",\"play_mode\":0}"]
 data/current=0

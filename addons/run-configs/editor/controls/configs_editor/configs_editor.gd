@@ -106,11 +106,11 @@ func _render_form(ind: int):
 	selected = ind
 	
 	if selected < 0 or selected >= configs.size():
-		%Editor.hide()
+		%Form.hide()
 		%Hint.show()
 		return
+	%Form.show()
 	%Hint.hide()
-	%Editor.show()
 	
 	var config := configs[selected]
 	# Name
