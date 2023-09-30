@@ -2,8 +2,7 @@ extends Node
 
 const RunConfig := preload("res://addons/run-configs/models/run_config.gd")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _init():
 	if not OS.has_feature(&"editor"):
 		return
 
