@@ -6,7 +6,7 @@ A Godot plugin that adds Run Configurations to the editor. Configurations can be
 
 1. Download the addon from the Asset Library.
 2. Activate the addon.
-3. Go to `Project Settings -> Autoloads` and re-order `RunConfigManager` to the top. While this is optional, the autoload is what sets the environment variables. If any of your autoloads uses environment variables in their `_init()` function, you should do this to ensure the environment variables are properly set.
+3. Go to `Project Settings -> Autoloads` and re-order `RunConfigManager` to the top. While this is optional, the autoload is what sets the environment variables. If any of your autoloads uses environment variables in their `_ready()` function, you should do this to ensure the environment variables are properly set.
 
 ## Usage
 

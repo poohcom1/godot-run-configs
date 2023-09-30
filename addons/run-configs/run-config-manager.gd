@@ -2,7 +2,7 @@ extends Node
 
 const RunConfig := preload("res://addons/run-configs/models/run_config.gd")
 
-func _init():
+func _ready():
 	if not OS.has_feature(&"editor"):
 		return
 
