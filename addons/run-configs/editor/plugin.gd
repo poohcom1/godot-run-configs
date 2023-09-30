@@ -42,6 +42,9 @@ func _exit_tree():
 	UIExtension.remove_control_from_editor_run_bar(configs_button)
 
 	remove_inspector_plugin(inspector_plugin)
+
+
+func _disable_plugin() -> void:
 	remove_autoload_singleton(AUTOLOAD_PATH)
 
 
