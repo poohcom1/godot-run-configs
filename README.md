@@ -1,5 +1,7 @@
 # Godot Run Configurations
 
+[<img src="https://img.shields.io/static/v1?label=GODOT%204.2&message=Asset%20Library&color=478CBF&labelColor=FFFFFF&style=for-the-badge&logo=godotengine">](https://godotengine.org/asset-library/asset/2200)
+
 A Godot plugin that adds Run Configurations to the editor. Configurations can be used to create templates for environment variables and entry scenes that can be easily accessed and run from the editor.
 
 ## Installation
