@@ -29,3 +29,9 @@ Each config contains the following settings:
 | Name                  | Name of the config                           |
 | Run Scene             | Which scene to run when the config is active | For this to come into effect, you have to run from the custom run button. Using the regular play buttons will use the respective scene of said button |
 | Environment Variables | OS environment variables                     | You can get these variables using `OS.get_environment(key)`                                                                                           |
+
+### Shortcuts
+
+| Shortcut         | Default    |
+| ---------------- | ---------- |
+| Run Custom Scene | Shift + F5 |

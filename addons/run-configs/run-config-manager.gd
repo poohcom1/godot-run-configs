@@ -1,5 +1,11 @@
 extends Node
 
+const CONFIGS_BASE_PATH := "run_configs"
+
+const _CONFIGS_DATA_PATH := "/data"
+const _CONFIGS_PATH := CONFIGS_BASE_PATH + _CONFIGS_DATA_PATH + "/configs"
+const _CURRENT_CONFIG_PATH := CONFIGS_BASE_PATH + _CONFIGS_DATA_PATH + "/current"
+
 const RunConfig := preload("res://addons/run-configs/models/run_config.gd")
 
 func _init():
@@ -30,10 +36,6 @@ static func get_current_config() -> RunConfig:
 		return null
 
 	return configs[ind]
-
-
-const _CONFIGS_PATH := "run_configs/data/configs"
-const _CURRENT_CONFIG_PATH := "run_configs/data/current"
 
 
 static func load_configs() -> Array[RunConfig]:
