@@ -37,7 +37,7 @@ func _add_column(key_text: String = "", val_text: String = ""):
 	var key := LineEdit.new()
 	key.text = key_text
 	key.placeholder_text = "Key"
-	key.custom_minimum_size.x = 150
+	key.custom_minimum_size.x = 200
 	key.text_changed.connect(func(txt): _emit_changes())
 	
 	var value := LineEdit.new()
