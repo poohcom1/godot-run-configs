@@ -10,6 +10,7 @@ var columns: Array[Array] = []
 
 func _ready() -> void:
 	add_env_button.pressed.connect(_add_column)
+	grid_container.resized.connect(_on_resize)
 
 
 func render(envs: Dictionary):
@@ -37,7 +38,7 @@ func _add_column(key_text: String = "", val_text: String = ""):
 	var key := LineEdit.new()
 	key.text = key_text
 	key.placeholder_text = "Key"
-	key.custom_minimum_size.x = 200
+	key.custom_minimum_size.x = grid_container.size.x / 3
 	key.text_changed.connect(func(txt): _emit_changes())
 	
 	var value := LineEdit.new()
@@ -73,3 +74,9 @@ func _delete_all_columns():
 		for control in column:
 			control.queue_free()
 	columns = []
+
+
+func _on_resize():
+	var children = grid_container.get_children()
+	for i in range(0, children.size(), 3):
+		children[i].custom_minimum_size.x = grid_container.size.x / 3
