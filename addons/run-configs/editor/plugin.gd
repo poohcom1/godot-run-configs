@@ -33,6 +33,8 @@ func _enter_tree():
 	UIExtension.add_control_to_editor_run_bar(separator)
 	# - Play Button
 	play_button.icon = preload("res://addons/run-configs/editor/assets/PlayConfig.svg")
+	play_button.flat = true
+	play_button.focus_mode = Control.FOCUS_NONE
 	play_button.pressed.connect(_play_scene)
 	play_button.tooltip_text = "Run Config Scene (Shift + F5)"
 	UIExtension.add_control_to_editor_run_bar(play_button)
