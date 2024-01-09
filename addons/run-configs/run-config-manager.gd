@@ -24,7 +24,13 @@ func _init():
 	for key in env.keys():
 		OS.set_environment(key, env[key])
 
-	print_rich("[color=yellow][Run Config][/color] Current config: [b]%s[/b]." % config.name)
+	print_rich("[color=grey][Run Config][/color] [color=white]Applied environment variables from the [b]%s[/b] config." % config.name)
+
+func _ready():
+	var config := get_current_config()
+	if not config: return
+	if config.custom_scene != "" and get_tree().current_scene.scene_file_path != config.custom_scene:
+		print_rich("[color=grey][Run Config][/color] [color=yellow][Warn][/color] The [b]%s[/b] config has a custom scene set, but the game is ran from the regular Run button. Please use the config Run button to run the custom scene." % config.name)
 
 
 ## API
